@@ -43,7 +43,7 @@ models/350m/pathpiecel_spacedigit_40960/pytorch_model.bin
 ```
 
 If you are interested in any of these models, please contact us and we'll figure out some other way for you to get them. 
-Perhaps HuggingFace would have been a better wayto go.
+Perhaps HuggingFace would have been a better way to go.
 
 ### `vocabularies` directory
 
