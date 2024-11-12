@@ -1,0 +1,69 @@
+{
+  "architectures": [
+    "MPTForCausalLM"
+  ],
+  "attn_config": {
+    "alibi": true,
+    "alibi_bias_max": 8,
+    "attn_impl": "torch",
+    "attn_pdrop": 0.0,
+    "attn_type": "multihead_attention",
+    "attn_uses_sequence_id": false,
+    "clip_qkv": 6,
+    "prefix_lm": false,
+    "qk_ln": false,
+    "rope": false,
+    "rope_dail_config": {
+      "pos_idx_in_fp32": true,
+      "type": "original",
+      "xpos_scale_base": 512
+    },
+    "rope_hf_config": {
+      "factor": 1.0,
+      "type": "no_scaling"
+    },
+    "rope_impl": "dail",
+    "rope_theta": 10000,
+    "sliding_window_size": -1,
+    "softmax_scale": null
+  },
+  "auto_map": {
+    "AutoConfig": "configuration_mpt.MPTConfig",
+    "AutoModelForCausalLM": "modeling_mpt.MPTForCausalLM"
+  },
+  "d_model": 1024,
+  "emb_pdrop": 0.0,
+  "embedding_fraction": 1.0,
+  "expansion_ratio": 4,
+  "fc_type": "torch",
+  "ffn_config": {
+    "fc_type": "torch",
+    "ffn_type": "mptmlp"
+  },
+  "init_config": {
+    "emb_init_std": null,
+    "emb_init_uniform_lim": null,
+    "fan_mode": "fan_in",
+    "init_div_is_residual": true,
+    "init_gain": 0.0,
+    "init_nonlinearity": "relu",
+    "init_std": null,
+    "name": "kaiming_normal_"
+  },
+  "init_deice": "meta",
+  "init_device": "cpu",
+  "learned_pos_emb": false,
+  "logit_scale": null,
+  "max_seq_len": 2048,
+  "model_type": "mpt",
+  "n_heads": 16,
+  "n_layers": 24,
+  "no_bias": false,
+  "norm_type": "low_precision_layernorm",
+  "resid_pdrop": 0.0,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.36.2",
+  "use_cache": false,
+  "use_pad_tok_in_ffn": true,
+  "vocab_size": 49153
+}
