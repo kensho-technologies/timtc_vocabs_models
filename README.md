@@ -12,7 +12,7 @@ Tokenization is a foundational step in natural language processing (NLP) tasks, 
 
 ### Installation
 
-The model files are quite large, so this repo used `git lfs` to store the large `*.bin` model files.  You will first need to install `git lfs`.  The particular instructions depend on your platform, but for example on Debian you would do `sudo apt install git-lfs`.  Then do `git lfs install` to set things up within git.  
+The model files are quite large, so this repo used `git lfs` to store the large `*.bin` and `model.safetensor` model files.  You will first need to install `git lfs`.  The particular instructions depend on your platform, but for example on Debian you would do `sudo apt install git-lfs`.  Then do `git lfs install` to set things up within git.  
 
 When cloning the repo it will first clone the smaller files, and then download the larger model files, which are stored outside the repo.
 **Please note that this repo will use 115G of disk space to clone!**  
@@ -24,8 +24,26 @@ To do so, set the `GIT_LFS_SKIP_SMUDGE` variable before cloning like this:
 GIT_LFS_SKIP_SMUDGE=1 git clone git@github.com:kensho-technologies/timtc_vocabs_models.git
 ```
 
-Then you can download an individual `.bin` file with `git lfs pull --include="path/to/file"`, or all of the files with `git lfs pull`.
+Then you can download an individual `.bin` or `model.safetensor` file with `git lfs pull --include="path/to/file"`, or all of the files with `git lfs pull`.
 
+See below for a list of files using `lfs`.
+
+### Files that are too big for GitHub
+
+Sadly, GitHub has a 2GB limit on files in `lfs`, so the following files were too large:
+
+```
+models/1.3b/sage_initbpe_firstspace_6_40960/pytorch_model.bin
+models/1.3b/pathpiecel_initngram_firstspacedigit_15_40960/pytorch_model.bin
+models/1.3b/bpe_merge_3_40960/pytorch_model.bin
+models/1.3b/pathpiecel_initbpe_firstspace_1_40960/pytorch_model.bin
+models/1.3b/unigram_likelihood_2_40960/pytorch_model.bin
+models/1.3b/sage_initngram_firstspacedigit_11_40960/pytorch_model.bin
+models/350m/pathpiecel_spacedigit_40960/pytorch_model.bin
+```
+
+If you are interested in any of these models, please contact us and we'll figure out some other way for you to get them. 
+Perhaps HuggingFace would have been a better wayto go.
 
 ### `vocabularies` directory
 
@@ -51,6 +69,77 @@ The byte-level tokens in the `tokencounts` directory use the same encoding as th
 
 The util.py file is released under the [AI Pubs Open Rail-S license](https://www.licenses.ai/ai-pubs-open-rails-vz1).
 
+### LFS files
+
+The following files are using `lfs`:
+
+```
+models/350m/bpe_greedy_4_32768/model.safetensors
+models/350m/bpe_greedy_4_32768/pytorch_model.bin
+models/350m/bpe_greedy_4_40960/model.safetensors
+models/350m/bpe_greedy_4_40960/pytorch_model.bin
+models/350m/bpe_greedy_4_49152/model.safetensors
+models/350m/bpe_greedy_4_49152/pytorch_model.bin
+models/350m/bpe_merge_3_32768/pytorch_model.bin
+models/350m/bpe_merge_3_40960/pytorch_model.bin
+models/350m/bpe_merge_3_49152/pytorch_model.bin
+models/350m/bpe_pathpiecel_13_32768/pytorch_model.bin
+models/350m/bpe_pathpiecel_13_40960/pytorch_model.bin
+models/350m/bpe_pathpiecel_13_49152/pytorch_model.bin
+models/350m/pathpiecel_initbpe_firstspace_1_32768/100000/pytorch_model.bin
+models/350m/pathpiecel_initbpe_firstspace_1_32768/pytorch_model.bin
+models/350m/pathpiecel_initbpe_firstspace_1_40960/pytorch_model.bin
+models/350m/pathpiecel_initbpe_firstspace_1_49152/pytorch_model.bin
+models/350m/pathpiecel_initngram_firstspace_16_32768/pytorch_model.bin
+models/350m/pathpiecel_initngram_firstspace_16_40960/pytorch_model.bin
+models/350m/pathpiecel_initngram_firstspace_16_49152/pytorch_model.bin
+models/350m/pathpiecel_initngram_firstspacedigit_15_32768/model.safetensors
+models/350m/pathpiecel_initngram_firstspacedigit_15_32768/pytorch_model.bin
+models/350m/pathpiecel_initngram_firstspacedigit_15_40960/pytorch_model.bin
+models/350m/pathpiecel_initngram_firstspacedigit_15_49152/pytorch_model.bin
+models/350m/pathpiecel_initunigram_firstspace_9_32768/pytorch_model.bin
+models/350m/pathpiecel_initunigram_firstspace_9_40960/pytorch_model.bin
+models/350m/pathpiecel_initunigram_firstspace_9_49152/pytorch_model.bin
+models/350m/pathpiecer_firstspacedigit_14_32768/pytorch_model.bin
+models/350m/pathpiecer_firstspacedigit_14_40960/pytorch_model.bin
+models/350m/pathpiecer_firstspacedigit_14_49152/pytorch_model.bin
+models/350m/pathpiecer_none_18_32768/pytorch_model.bin
+models/350m/pathpiecer_none_18_40960/pytorch_model.bin
+models/350m/pathpiecer_none_18_49152/pytorch_model.bin
+models/350m/pathpiecer_spacedigit_12_32768/pytorch_model.bin
+models/350m/pathpiecer_spacedigit_12_40960/model.safetensors
+models/350m/pathpiecer_spacedigit_12_40960/pytorch_model.bin
+models/350m/pathpiecer_spacedigit_12_49152/pytorch_model.bin
+models/350m/sage_initbpe_firstspace_6_32768/pytorch_model.bin
+models/350m/sage_initbpe_firstspace_6_40960/pytorch_model.bin
+models/350m/sage_initbpe_firstspace_6_49152/pytorch_model.bin
+models/350m/sage_initngram_firstspace_8_32768/model.safetensors
+models/350m/sage_initngram_firstspace_8_32768/pytorch_model.bin
+models/350m/sage_initngram_firstspace_8_40960/pytorch_model.bin
+models/350m/sage_initngram_firstspace_8_49152/pytorch_model.bin
+models/350m/sage_initngram_firstspacedigit_11_32768/pytorch_model.bin
+models/350m/sage_initngram_firstspacedigit_11_40960/pytorch_model.bin
+models/350m/sage_initngram_firstspacedigit_11_49152/pytorch_model.bin
+models/350m/sage_initunigram_firstspace_10_32768/pytorch_model.bin
+models/350m/sage_initunigram_firstspace_10_40960/pytorch_model.bin
+models/350m/sage_initunigram_firstspace_10_49152/pytorch_model.bin
+models/350m/unigram_greedy_7_32768/model.safetensors
+models/350m/unigram_greedy_7_32768/pytorch_model.bin
+models/350m/unigram_greedy_7_40960/model.safetensors
+models/350m/unigram_greedy_7_40960/pytorch_model.bin
+models/350m/unigram_greedy_7_49152/model.safetensors
+models/350m/unigram_greedy_7_49152/pytorch_model.bin
+models/350m/unigram_likelihood_2_32768/pytorch_model.bin
+models/350m/unigram_likelihood_2_40960/pytorch_model.bin
+models/350m/unigram_likelihood_2_49152/pytorch_model.bin
+models/350m/unigram_pathpiecel_17_32768/pytorch_model.bin
+models/350m/unigram_pathpiecel_17_40960/pytorch_model.bin
+models/350m/unigram_pathpiecel_17_49152/pytorch_model.bin
+models/350m/wordpiece_5_32768/pytorch_model.bin
+models/350m/wordpiece_5_40960/pytorch_model.bin
+models/350m/wordpiece_5_49152/pytorch_model.bin
+```
+
 ### License
 
 As already mentioned, the various directories are covered by different licenses.
@@ -58,3 +147,5 @@ As already mentioned, the various directories are covered by different licenses.
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 © 2023-present Kensho Technologies, LLC. The present date is determined by the timestamp of the most recent commit in the repository.
+
+
