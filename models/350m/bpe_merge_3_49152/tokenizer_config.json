@@ -1,0 +1,7 @@
+{
+  "clean_up_tokenization_spaces": true,
+  "eos_token": "<|endoftext|>",
+  "model_max_length": 2048,
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "unk_token": "<UNK>"
+}
